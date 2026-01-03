@@ -1,21 +1,21 @@
-# 📚 Notion Book CLI
+# Notion Book CLI
 
 A Python CLI tool to log books, authors, tags, and reviews directly to a Notion Database from the terminal, without needing to open the browser.
 
-## 🚀 Features
+## Features
 
 - **Quick Logging:** Add books to your database via command line arguments.
 - **Auto-Tagging:** Automatically creates new tags in Notion (Multi-select) if they don't exist.
 - **Reviews:** Writes your review directly into the page body.
 - **Interactive Mode:** Prompts for details if no arguments are provided.
 
-## 🛠️ Prerequisites
+## Prerequisites
 
 - Python 3.x
 - A Notion Account
 - A Notion Integration Token
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 1. **Clone the repository**
    ```bash
@@ -55,3 +55,4 @@ Pass the arguments in this order: "Title" "Author" "Tags" "Review"
 
 Bash
 python add_livro.py "Dune" "Frank Herbert" "Sci-Fi, Classic" "A masterpiece about politics and sand."
+
