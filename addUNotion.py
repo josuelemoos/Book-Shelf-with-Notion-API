@@ -5,17 +5,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# --- CONFIGURAÇÃO SIMPLIFICADA ---
-# Como a estrutura é igual, só precisamos mapear o ID e o Ícone
+
 DBS = {
     "1": { "tipo": "Livro", "id": os.getenv("DB_LIVROS_ID"), "icon": "📚" },
     "2": { "tipo": "Filme", "id": os.getenv("DB_FILMES_ID"), "icon": "🎬" },
     "3": { "tipo": "Série", "id": os.getenv("DB_SERIES_ID"), "icon": "📺" }
 }
 
-# --- NOME PADRÃO DA COLUNA ---
-# Importante: Todas as suas tabelas no Notion devem ter uma coluna
-# tipo Texto (Rich Text) com ESTE NOME exato:
+
 COLUNA_AUTOR_PADRAO = "Autor" 
 
 TOKEN = os.getenv("NOTION_TOKEN")
@@ -35,7 +32,7 @@ def enviar_notion(db_config, titulo, criador, tags, review):
         "properties": {
             "Name": { "title": [{"text": {"content": titulo}}] },
             
-            # Aqui usamos o nome padrão para todos
+            
             COLUNA_AUTOR_PADRAO: { 
                 "rich_text": [{"text": {"content": criador}}] 
             },
@@ -62,7 +59,7 @@ def enviar_notion(db_config, titulo, criador, tags, review):
         print(f"\n✅ Sucesso! {db_config['icon']} '{titulo}' salvo em {db_config['tipo']}.")
     else:
         print(f"\n❌ Erro {res.status_code}:")
-        # Mostra o erro de um jeito mais limpo
+        
         print(res.json().get('message', res.text))
 
 def menu():
@@ -81,7 +78,7 @@ def menu():
     
     print(f"\nAdicionando em {config['tipo']}...")
     titulo = input("Título: ")
-    # O prompt adapta o texto, mas no Notion vai tudo para a coluna 'Autor'
+    
     nome_criador = input("Autor/Diretor: ") 
     tags = input("Tags: ")
     review = input("Review: ")
