@@ -14,13 +14,12 @@ A Python CLI tool to log books, authors, tags, and reviews directly to a Notion 
 - A Notion Integration Token
 - Your Database id from the notion page
 - .env in this format:
-
-```ini
+```
 NOTION_TOKEN=secret_seu_token_aqui_etc_etc
 DB_LIVROS_ID=seu_id_do_banco_livros
 DB_FILMES_ID=seu_id_do_banco_filmes
 DB_SERIES_ID=seu_id_do_banco_series
-
+```
 ## Installation & Setup
 
 1. **Clone the repository**
@@ -61,6 +60,7 @@ Pass the arguments in this order: "Title" "Author" "Tags" "Review"
 
 Bash
 python add_livro.py "Dune" "Frank Herbert" "Sci-Fi, Classic" "A masterpiece about politics and sand."
+
 
 
 
